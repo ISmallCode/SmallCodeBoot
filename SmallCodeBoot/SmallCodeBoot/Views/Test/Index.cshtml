@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/scripts/jquery-1.9.1.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/jquery.popup.js"></script>
+<h2>Index</h2>
+
+
+<script>
+    $(function () {
+        // Ewin.alert("哈哈哈哈");
+        Ewin.confirm("确定删除").on(function (e) {
+            console.log(e);
+        });
+    })
+</script>
