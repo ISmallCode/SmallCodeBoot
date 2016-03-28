@@ -199,7 +199,10 @@
     <Content Include="scripts\jquery.pagination.js" />
     <Content Include="scripts\jquery.popup.js" />
     <Content Include="scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\messenger\messenger-theme-flat.js" />
     <Content Include="scripts\messenger\messenger-theme-future.js" />
