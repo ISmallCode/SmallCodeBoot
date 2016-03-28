@@ -1,0 +1,59 @@
+﻿@model  SmallCodeBoot.DataModels.BaseViewModel
+@using System.Data;
+@using SmallCodeBoot.Models
+@using SmallCodeBoot.Extendsions
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="text-align:center">
+                <a href="/User/Edit" class="btn btn-default">新增</a>
+            </th>
+            <th style="text-align:center">
+                <label class="control-label">ID</label>
+            </th>
+            <th style="text-align:center">
+                <label class="control-label">用户名</label>
+            </th>
+            <th style="text-align:center">
+                <label class="control-label">角色</label>
+            </th>
+            <th style="text-align:center">
+                <label class="control-label">邮箱</label>
+            </th>
+            <th style="text-align:center">
+                <label class="control-label">创建时间</label>
+            </th>
+          
+        </tr>
+    </thead>
+    @if (Model.DataSource != null)
+    {
+        <tbody style="text-align:center;">
+            @foreach (DataRow dr in Model.DataSource.Rows)
+                {
+                <tr id="@dr["ID"].ToString()">
+                    <td style="text-align:center">
+                        <a href="/User/Edit/@dr["ID"].ToString()" class="btn btn-default">修改</a>
+                        <input type="button" class="btn btn-default" value="删除" onclick="deleteDialog('/User/Delete/@dr["ID"].ToString()',@dr["ID"].ToString())" />
+                    </td>
+                    <td>
+                        @dr["ID"].ToString()
+                    </td>
+                    <td>
+                        @dr["Username"].ToString()
+                    </td>
+                    <td>
+                        @(Convert.ToInt32(dr["Role"].ToString()).ToEnum<Role>())
+                    </td>
+                    <td>
+                        @dr["Email"].ToString()
+                    </td>
+                    <td>
+                        @dr["CreatedDate"].ToString()
+                    </td>
+                </tr>
+            }
+        </tbody>
+    }
+</table>
+<input id="hidTotalPage" type="hidden" value="@Model.TotalRecords" />

@@ -87,5 +87,38 @@ namespace SmallCodeBoot.Controllers
         {
             return View(CurrentUser);
         }
+
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(string OldPassword, string NewPassword, string Confirm)
+        {
+            if (string.IsNullOrEmpty(NewPassword) || string.IsNullOrEmpty(Confirm) || string.IsNullOrEmpty(OldPassword))
+            {
+                ModelState.AddModelError("warn", "输入的原始密码或者新密码或者新密码重复不能为空");
+            }
+            if (NewPassword != Confirm)
+            {
+                ModelState.AddModelError("warn", "两次新密码输入的不一致");
+            }
+
+            service.UpdatePassword(CurrentUser.ID, NewPassword, OldPassword);
+
+            if (service.IsSuccess)
+            {
+                return RedirectToAction("Show");
+            }
+            else
+            {
+                ModelState.AddModelError("warn", service.ReturnMsg);
+            }
+
+            return View();
+        }
     }
 }

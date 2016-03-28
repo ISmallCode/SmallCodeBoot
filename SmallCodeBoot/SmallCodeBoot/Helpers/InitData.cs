@@ -16,7 +16,7 @@ namespace SmallCodeBoot.Helpers
             {
                 new User
                 {
-                    ID =new Guid(),
+                    ID =Guid.NewGuid(),
                     Username="admin",
                     Password = "123456".ToMD5Hash(),
                    CreatedDate=DateTime.Now,
