@@ -149,11 +149,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\base.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\common.css" />
+    <Content Include="Content\img\page-bg-black.png" />
     <Content Include="Content\login.css" />
     <Content Include="Content\messenger\messenger-spinner.css" />
     <Content Include="Content\messenger\messenger-theme-air.css" />
@@ -200,7 +202,6 @@
     <Content Include="scripts\sweetalert.min.js" />
     <Content Include="scripts\toastr.js" />
     <Content Include="scripts\toastr.min.js" />
-    <Content Include="Styles\sweetalert.css" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -211,7 +212,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extendsions\DateExtension.cs" />
     <Compile Include="Extendsions\DateHelper.cs" />
@@ -244,9 +244,9 @@
     <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
-    <Content Include="Views\Sweet\Alert.cshtml" />
     <Content Include="Views\Test\Test1.cshtml" />
     <Content Include="Views\Test\Test2.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,8 +257,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DataModels\" />
+    <Folder Include="Styles\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
