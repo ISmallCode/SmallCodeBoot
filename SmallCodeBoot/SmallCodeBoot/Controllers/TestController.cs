@@ -13,5 +13,20 @@ namespace SmallCodeBoot.Controllers
         {
             return View();
         }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
+
+        public ActionResult Test1()
+        {
+            return View();
+        }
+
+        public ActionResult Test2()
+        {
+            return View();
+        }
     }
 }

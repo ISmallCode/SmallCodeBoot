@@ -155,7 +155,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\common.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\messenger\messenger-spinner.css" />
+    <Content Include="Content\messenger\messenger-theme-air.css" />
+    <Content Include="Content\messenger\messenger-theme-block.css" />
+    <Content Include="Content\messenger\messenger-theme-flat.css" />
+    <Content Include="Content\messenger\messenger-theme-future.css" />
+    <Content Include="Content\messenger\messenger-theme-ice.css" />
+    <Content Include="Content\messenger\messenger.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -166,7 +176,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\bootbox.js" />
+    <Content Include="scripts\bootbox.min.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
@@ -176,7 +192,15 @@
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery.popup.js" />
+    <Content Include="scripts\messenger\messenger-theme-flat.js" />
+    <Content Include="scripts\messenger\messenger-theme-future.js" />
+    <Content Include="scripts\messenger\messenger.js" />
+    <Content Include="scripts\messenger\messenger.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\sweetalert.min.js" />
+    <Content Include="scripts\toastr.js" />
+    <Content Include="scripts\toastr.min.js" />
+    <Content Include="Styles\sweetalert.css" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -187,6 +211,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extendsions\DateExtension.cs" />
     <Compile Include="Extendsions\DateHelper.cs" />
@@ -218,6 +243,10 @@
     </Content>
     <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\Test.cshtml" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
+    <Content Include="Views\Test\Test1.cshtml" />
+    <Content Include="Views\Test\Test2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

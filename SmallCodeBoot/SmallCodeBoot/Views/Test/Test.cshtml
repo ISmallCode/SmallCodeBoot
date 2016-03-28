@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/bootbox.min.js"></script>
+<h2>Test</h2>
+
+<script>
+    $(function () {
+        //bootbox.alert("确认删除", function () {
+
+        //});
+        //bootbox.prompt("确认删除", function (e) {
+        //    console.log(e);
+        //});
+
+        bootbox.confirm("确认删除", function (e) {
+
+        });
+
+    });
+</script>
