@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace SmallCodeBoot.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
 
         UserService service = new UserService();
@@ -82,5 +82,10 @@ namespace SmallCodeBoot.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+
+        public ActionResult Show()
+        {
+            return View(CurrentUser);
+        }
     }
 }
