@@ -241,6 +241,11 @@
     <Compile Include="Helpers\EFFilter\WhereFilter.cs" />
     <Compile Include="Helpers\InitData.cs" />
     <Compile Include="Helpers\IPHelper.cs" />
+    <Compile Include="Migrations\201603271418559_InitialCreate.cs" />
+    <Compile Include="Migrations\201603271418559_InitialCreate.Designer.cs">
+      <DependentUpon>201603271418559_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\SmallCodeContext.cs" />
     <Compile Include="Models\User.cs" />
@@ -280,6 +285,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Styles\" />
     <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603271418559_InitialCreate.resx">
+      <DependentUpon>201603271418559_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

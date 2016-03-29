@@ -39,7 +39,7 @@ namespace SmallCodeBoot.Services
         /// 保存
         /// </summary>
         /// <param name="user"></param>
-        public  void Save(User user)
+        public void Save(User user)
         {
             using (SmallCodeContext db = new SmallCodeContext())
             {
@@ -50,6 +50,22 @@ namespace SmallCodeBoot.Services
             }
         }
 
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        internal void Remove(Guid id)
+        {
+            using (SmallCodeContext db = new SmallCodeContext())
+            {
+                User user = db.Users.Find(id);
+                db.Users.Remove(user);
+                bool result = db.SaveChanges() > 0;
+                base.IsSuccess = result;
+                base.ReturnMsg = result ? "删除成功" : "删除失败";
+            }
+        }
         /// <summary>
         /// 分页得到用户
         /// </summary>

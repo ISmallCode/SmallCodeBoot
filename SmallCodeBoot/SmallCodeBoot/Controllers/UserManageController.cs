@@ -1,4 +1,5 @@
 ﻿using SmallCodeBoot.DataModels;
+using SmallCodeBoot.Extendsions;
 using SmallCodeBoot.Helpers.EFFilter;
 using SmallCodeBoot.Models;
 using SmallCodeBoot.Services;
@@ -38,11 +39,22 @@ namespace SmallCodeBoot.Controllers
         {
             AjaxReturnModel model = new AjaxReturnModel();
             user.CreatedDate = DateTime.Now;
+            user.Password = user.Password.ToMD5Hash();
             user.ID = Guid.NewGuid();
             user.IsDelete = false;
             service.Save(user);
             model.Status = service.IsSuccess ? "ok" : "fail";
             model.ReturnUrl = "/UserManage";
+            model.Message = service.ReturnMsg;
+            return Json(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Guid id)
+        {
+            AjaxReturnModel model = new AjaxReturnModel();
+            service.Remove(id);
+            model.Status = service.IsSuccess ? "ok" : "fail";
             model.Message = service.ReturnMsg;
             return Json(model);
         }

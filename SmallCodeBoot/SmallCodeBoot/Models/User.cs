@@ -12,12 +12,17 @@ namespace SmallCodeBoot.Models
         public Guid ID { set; get; }
 
         [MaxLength(20)]
+        [Display(Name ="用户名")]
+        [Required]
         public string Username { set; get; }
 
         [MaxLength(50)]
+        [Display(Name = "密码")]
+        [Required]
         public string Password { set; get; }
 
         [MaxLength(50)]
+        [Display(Name = "邮箱")]
         public string Email { set; get; }
 
         public DateTime CreatedDate { set; get; }
