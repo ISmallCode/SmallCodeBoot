@@ -1,4 +1,5 @@
-﻿using SmallCodeBoot.DataModels;
+﻿using Newtonsoft.Json;
+using SmallCodeBoot.DataModels;
 using SmallCodeBoot.Extendsions;
 using SmallCodeBoot.Helpers.EFFilter;
 using SmallCodeBoot.Models;
@@ -57,6 +58,25 @@ namespace SmallCodeBoot.Controllers
             model.Status = service.IsSuccess ? "ok" : "fail";
             model.Message = service.ReturnMsg;
             return Json(model);
+        }
+
+        public FileResult ExportToExcel(FormCollection collection)
+        {
+            dynamic obj = JsonConvert.DeserializeObject(collection["filter"]);
+
+            string Username = obj["Username"];
+
+            service.GetList(Username, 1, 20);
+
+            service.GetList(Username, 1, service.TotalRecords);
+
+            Dictionary<string, string> expColAsNames = new Dictionary<string, string>()
+            {
+                            {"Username","用户名"},
+                            {"Email","邮件"},
+            };
+            CommonController comm = new CommonController();
+            return comm.ExportDateExcel("用户导出", expColAsNames, service.PageTable);
         }
     }
 }

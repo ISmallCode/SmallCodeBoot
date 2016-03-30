@@ -28,6 +28,7 @@
                 <div class="row col-md-6">
                     <input type="button" class="btn btn-default" value="查询" onclick="Search(0);" />
                     <input type="reset" class="btn btn-default" value="清除" />
+                    <input type="button" class="btn btn-default" value="导出" onclick="ExportExcel()" />
                 </div>
             </div>
         </form>
@@ -78,4 +79,34 @@
     $(function () {
         Search(0);
     });
+
+    // 导出Excel
+    function ExportExcel() {
+        var obj = {
+            Username: $("#txtUsername").val(),
+        };
+
+        PostNonAjax('@Url.Action("ExportToExcel", "UserManage")', 'post', { "filter": JSON.stringify(obj) });
+    };
+
+    // 列印Excel公共JS方法
+    function PostNonAjax(action, method, input) {
+        "use strict";
+        var form;
+        form = $('<form />', {
+            action: action,
+            method: method,
+            style: 'display: none;'
+        });
+        if (typeof input !== 'undefined') {
+            $.each(input, function (name, value) {
+                $('<input />', {
+                    type: 'hidden',
+                    name: name,
+                    value: value
+                }).appendTo(form);
+            });
+        }
+        form.appendTo('body').submit();
+    };
 </script>
